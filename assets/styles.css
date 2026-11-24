@@ -393,3 +393,28 @@ p { margin: 0 0 1em; }
 @media (max-width: 760px) {
   .gallery .shot--a, .gallery .shot--b { grid-column: span 1; grid-row: span 1; }
 }
+
+/* ===== Marialuisa blanca en proyectos ===== */
+.shot {
+  --mat: clamp(8px, 1vw, 14px);
+  background: #fbfaf6;
+  padding: var(--mat);
+  box-shadow: 0 22px 44px -22px rgba(0,0,0,.45);
+}
+.shot__img, .shot__video {
+  inset: var(--mat);
+  width: auto; height: auto;
+  border-radius: calc(var(--radius) - 6px);
+  overflow: hidden;
+}
+.shot__video { width: calc(100% - 2 * var(--mat)); height: calc(100% - 2 * var(--mat)); }
+/* línea fina blanca por dentro */
+.shot::after {
+  content: ""; position: absolute; z-index: 1; pointer-events: none;
+  inset: calc(var(--mat) + 8px);
+  border: 1.5px solid rgba(255,255,255,.75);
+  border-radius: calc(var(--radius) - 12px);
+}
+.shot figcaption { inset: auto var(--mat) var(--mat) var(--mat); border-radius: 0 0 calc(var(--radius) - 6px) calc(var(--radius) - 6px); padding-bottom: 1.5rem; padding-inline: 1.6rem; }
+.shot::before, .shot__play { top: calc(var(--mat) + 1.1rem); left: calc(var(--mat) + 1.1rem); }
+.shot:hover .shot__img, .shot--video:hover .shot__video { transform: scale(1.02); }
