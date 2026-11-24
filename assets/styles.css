@@ -303,6 +303,6 @@ p { margin: 0 0 1em; }
 .lightbox__close { position: absolute; top: 1rem; right: 1.2rem; width: 48px; height: 48px; border: 0; border-radius: 50%; background: var(--crema); color: var(--verde-osc); font-size: 1.8rem; line-height: 1; cursor: pointer; }
 
 /* WhatsApp flotante */
-.wa { position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--verde); display: grid; place-items: center; box-shadow: 0 10px 30px rgba(16,54,31,.35); transition: transform .2s ease, background .2s ease; }
+.wa { position: fixed; right: 1.2rem; bottom: 4.4rem; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--verde); display: grid; place-items: center; box-shadow: 0 10px 30px rgba(16,54,31,.35); transition: transform .2s ease, background .2s ease; }
 .wa:hover { transform: scale(1.08); background: var(--verde-osc); }
 .wa svg { width: 30px; height: 30px; fill: var(--crema); }
