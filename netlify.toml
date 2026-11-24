@@ -1,0 +1,20 @@
+[build]
+  publish = "."
+
+# La raíz del dominio manda a la página de bienvenida
+[[redirects]]
+  from = "/"
+  to = "/bienvenida/"
+  status = 302
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
