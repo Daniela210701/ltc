@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=10">
+  <link rel="stylesheet" href="/assets/styles.css?v=11">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -143,25 +143,27 @@
         </div>
         <!-- Para poner las fotos: guarda proyecto-1.jpg … proyecto-5.jpg en /assets/proyectos/ -->
         <div class="gallery">
-          <figure class="shot shot--a reveal" style="--img:url('/assets/proyectos/proyecto-1.jpg')">
-            <div class="shot__img" role="img" aria-label="Evento producido por LTC"></div>
+          <figure class="shot shot--a shot--video reveal" data-video="/assets/proyectos/evento.mp4">
+            <video class="shot__video" src="/assets/proyectos/evento.mp4" poster="/assets/proyectos/evento.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Stand de evento producido por LTC"></video>
+            <span class="shot__play">▶ Ver con sonido</span>
+            <figcaption>“Así se vive una experiencia diseñada a la medida.”</figcaption>
+          </figure>
+          <figure class="shot shot--b shot--video reveal" data-video="/assets/proyectos/taller.mp4">
+            <video class="shot__video" src="/assets/proyectos/taller.mp4" poster="/assets/proyectos/taller.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Taller de fabricación de LTC"></video>
+            <span class="shot__play">▶ Ver con sonido</span>
             <figcaption>“Un breve adelanto de lo que estuvimos construyendo recientemente.”</figcaption>
           </figure>
-          <figure class="shot shot--b reveal" style="--img:url('/assets/proyectos/proyecto-2.jpg')">
+          <figure class="shot shot--c reveal" style="--img:url('/assets/proyectos/proyecto-3.jpg')">
             <div class="shot__img" role="img" aria-label="Montaje de evento"></div>
             <figcaption>“De la idea al montaje: así se ve la ejecución en el mundo real.”</figcaption>
           </figure>
-          <figure class="shot shot--c reveal" style="--img:url('/assets/proyectos/proyecto-3.jpg')">
+          <figure class="shot shot--d reveal" style="--img:url('/assets/proyectos/proyecto-4.jpg')">
             <div class="shot__img" role="img" aria-label="Producción de evento"></div>
             <figcaption>“Fragmentos de una producción diseñada para conectar.”</figcaption>
           </figure>
-          <figure class="shot shot--d reveal" style="--img:url('/assets/proyectos/proyecto-4.jpg')">
+          <figure class="shot shot--e reveal" style="--img:url('/assets/proyectos/proyecto-5.jpg')">
             <div class="shot__img" role="img" aria-label="Reto operativo"></div>
             <figcaption>“Una mirada rápida a uno de nuestros últimos retos operativos.”</figcaption>
-          </figure>
-          <figure class="shot shot--e reveal" style="--img:url('/assets/proyectos/proyecto-5.jpg')">
-            <div class="shot__img" role="img" aria-label="Experiencia a la medida"></div>
-            <figcaption>“Así se vive una experiencia diseñada a la medida.”</figcaption>
           </figure>
         </div>
       </div>
@@ -293,9 +295,10 @@
   <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox__close" aria-label="Cerrar">×</button>
     <img alt="">
+    <video controls playsinline hidden></video>
     <p class="lightbox__cap"></p>
   </div>
 
-  <script src="/assets/main.js?v=10" defer></script>
+  <script src="/assets/main.js?v=11" defer></script>
 </body>
 </html>

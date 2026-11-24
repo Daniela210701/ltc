@@ -79,19 +79,32 @@ document.querySelectorAll(".service__cta").forEach((a) =>
   })
 );
 
-// Visor de fotos de proyectos
+// Visor de fotos y videos de proyectos
 const lb = document.getElementById("lightbox");
 if (lb) {
   const lbImg = lb.querySelector("img");
+  const lbVid = lb.querySelector("video");
   const lbCap = lb.querySelector(".lightbox__cap");
-  const close = () => { lb.hidden = true; document.body.style.overflow = ""; };
+  const close = () => {
+    lb.hidden = true;
+    document.body.style.overflow = "";
+    if (lbVid) { lbVid.pause(); lbVid.removeAttribute("src"); lbVid.load(); }
+  };
   document.querySelectorAll(".shot").forEach((shot) =>
     shot.addEventListener("click", () => {
-      if (!shot.classList.contains("has-img")) return;
-      const m = shot.style.getPropertyValue("--img").match(/url\(['"]?(.*?)['"]?\)/);
-      lbImg.src = m ? m[1] : "";
-      lbImg.alt = shot.querySelector(".shot__img")?.getAttribute("aria-label") || "";
-      lbCap.textContent = shot.querySelector("figcaption")?.textContent || "";
+      const cap = shot.querySelector("figcaption")?.textContent || "";
+      if (shot.dataset.video && lbVid) {
+        lbImg.hidden = true; lbVid.hidden = false;
+        lbVid.src = shot.dataset.video; lbVid.muted = false;
+        lbVid.play().catch(() => {});
+      } else if (shot.classList.contains("has-img")) {
+        const m = shot.style.getPropertyValue("--img").match(/url\(['"]?(.*?)['"]?\)/);
+        if (lbVid) lbVid.hidden = true;
+        lbImg.hidden = false;
+        lbImg.src = m ? m[1] : "";
+        lbImg.alt = shot.querySelector(".shot__img")?.getAttribute("aria-label") || "";
+      } else return;
+      lbCap.textContent = cap;
       lb.hidden = false;
       document.body.style.overflow = "hidden";
     })
