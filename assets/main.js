@@ -99,3 +99,20 @@ if (lb) {
   lb.addEventListener("click", (e) => { if (e.target === lb || e.target.closest(".lightbox__close")) close(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) close(); });
 }
+
+// Ajuste automático: si una palabra del título no cabe en su columna, se reduce la letra
+const fitTitles = () => {
+  document.querySelectorAll(".display").forEach((el) => {
+    el.style.fontSize = "";
+    let size = parseFloat(getComputedStyle(el).fontSize);
+    let guard = 60;
+    while (el.scrollWidth > el.clientWidth + 1 && size > 18 && guard--) {
+      size -= 2;
+      el.style.fontSize = size + "px";
+    }
+  });
+};
+(document.fonts?.ready || Promise.resolve()).then(fitTitles);
+window.addEventListener("load", fitTitles);
+let fitT;
+window.addEventListener("resize", () => { clearTimeout(fitT); fitT = setTimeout(fitTitles, 120); });
