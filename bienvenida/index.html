@@ -11,273 +11,252 @@
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css?v=5">
 </head>
 <body>
-  <!-- Estrella reutilizable -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="star" viewBox="0 0 100 100"><polygon points="50,0 56.7,24.9 75,6.7 68.4,31.6 93.3,25 75.1,43.3 100,50 75.1,56.7 93.3,75 68.4,68.4 75,93.3 56.7,75.1 50,100 43.3,75.1 25,93.3 31.6,68.4 6.7,75 24.9,56.7 0,50 24.9,43.3 6.7,25 31.6,31.6 25,6.7 43.3,24.9"/></symbol>
-  </svg>
-
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#inicio" class="nav__logo" aria-label="LTC Experiential, inicio">
-        <img src="/assets/img/logo-ltc.png" alt="" width="44" height="38">
+        <img src="/assets/img/logo-ltc.png" alt="LTC Experiential" width="54" height="47">
         <span>LTC<br><em>Experiential</em></span>
       </a>
       <nav class="nav__links" id="menu" aria-label="Principal">
         <a href="#conocenos">Conócenos</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#servicios">Servicios</a>
-        <a href="#contacto" class="btn btn--dark">Contáctanos</a>
+        <a href="#contacto" class="btn btn--sm">Contáctanos</a>
       </nav>
-      <button class="nav__toggle" id="toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      <button class="nav__toggle" id="toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main id="contenido">
 
     <!-- ============ HERO ============ -->
-    <section class="block" id="inicio">
-      <div class="wrap">
-        <div class="panel hero">
-          <div class="hero__dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <img class="hero__logo" src="/assets/img/logo-ltc.png" alt="" width="900" height="780">
-          <h1 class="hero__big">
-            <span><b>Ide</b>as</span>
-            <span class="hero__row"><span>Q<i>UE</i></span>
-              <span class="hero__tag"><span>Se convierten en</span><span>experiencias</span><span>memorables</span></span>
-            </span>
+    <section class="hero" id="inicio">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow reveal">Somos LTC Experiential</p>
+          <h1 class="display reveal">
+            Ideas que se<br>convierten en<br><span class="hl">experiencias</span>
           </h1>
-          <div class="hero__foot">
-            <p>Somos LTC Experiential: un equipo dinámico e integral que transforma ideas en experiencias memorables y nuevos retos.</p>
-            <div class="hero__cta">
-              <a href="#servicios" class="btn">Ver servicios</a>
-              <a href="#contacto" class="btn btn--line">Hablemos</a>
-            </div>
+          <p class="lead reveal">Un equipo dinámico e integral que transforma ideas en experiencias memorables y nuevos retos.</p>
+          <div class="hero__cta reveal">
+            <a href="#servicios" class="btn">Ver servicios</a>
+            <a href="#contacto" class="btn btn--ghost">Hablemos de tu proyecto</a>
+          </div>
+          <ul class="hero__chips reveal" aria-label="Servicios">
+            <li><a href="#serv-1">Eventos y fabricación</a></li>
+            <li><a href="#serv-2">BTL y mecatrónica</a></li>
+            <li><a href="#serv-3">Audiovisual y foto</a></li>
+            <li><a href="#serv-4">VFX e IA</a></li>
+          </ul>
+        </div>
+        <div class="hero__logo reveal">
+          <img src="/assets/img/logo-ltc.png" alt="" width="900" height="780">
+        </div>
+      </div>
+    </section>
+
+    <!-- Cintillo -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Creatividad</span><i>✦</i><span>Estrategia</span><i>✦</i><span>Músculo operativo</span><i>✦</i><span>Producción</span><i>✦</i><span>Experiencias</span><i>✦</i>
+        <span>Creatividad</span><i>✦</i><span>Estrategia</span><i>✦</i><span>Músculo operativo</span><i>✦</i><span>Producción</span><i>✦</i><span>Experiencias</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ I. CONÓCENOS ============ -->
+    <section class="section section--dark" id="conocenos">
+      <div class="wrap">
+        <div class="about-head reveal">
+          <p class="eyebrow">Conócenos</p>
+          <h2 class="display display--md">Somos LTC<br><span class="hl">Experiential</span></h2>
+          <p class="lead lead--light">Un equipo dinámico e integral que transforma ideas en experiencias memorables y nuevos retos.</p>
+        </div>
+        <div class="split">
+          <h3 class="display display--sm reveal">¿Nuestro<br><span class="hl">secreto?</span></h3>
+          <div class="reveal">
+            <p class="lead lead--light">Creatividad, estrategia y músculo operativo en un mismo lugar.</p>
+            <p>Diseñamos, producimos y ejecutamos proyectos diseñados para funcionar en el mundo real. Cuidamos cada detalle de principio a fin, porque entendemos que lo más importante no es solo producir un proyecto, sino <strong>garantizar el resultado</strong>.</p>
           </div>
         </div>
-        <div class="pattern" aria-hidden="true"><div class="pattern__a"></div><div class="pattern__b"></div></div>
+      </div>
+    </section>
+
+    <!-- Pilares -->
+    <section class="section" id="pilares">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Cómo trabajamos</p>
+          <h2 class="display display--md">Nuestros pilares</h2>
+        </div>
+        <ol class="pillars">
+          <li class="reveal"><span class="num">01</span><h3>Te escuchamos primero</h3><p>Antes de ofrecerte una solución, nos aseguramos de entender exactamente lo que necesitas.</p></li>
+          <li class="reveal"><span class="num">02</span><h3>Hablamos claro y sin letras chiquitas</h3><p>Te explicamos precios, tiempos y condiciones de forma directa y transparente.</p></li>
+          <li class="reveal"><span class="num">03</span><h3>Respetamos tu tiempo</h3><p>Cumplimos con los horarios acordados y te avisamos con anticipación si surge algún imprevisto.</p></li>
+          <li class="reveal"><span class="num">04</span><h3>Cuidamos la calidad en cada detalle</h3><p>Tratamos tu proyecto o compra con el mismo esmero con el que quisiéramos ser atendidos.</p></li>
+          <li class="reveal"><span class="num">05</span><h3>Damos la cara si algo falla</h3><p>Si cometemos un error, lo reconocemos y nos enfocamos en resolverlo, no en buscar excusas.</p></li>
+          <li class="reveal"><span class="num">06</span><h3>Te acompañamos después de la venta</h3><p>Nuestro compromiso no termina cuando pagas; seguimos disponibles para apoyarte y resolver dudas.</p></li>
+          <li class="reveal"><span class="num">07</span><h3>Valoramos tu opinión</h3><p>Tus comentarios y críticas nos ayudan a mejorar todos los días.</p></li>
+          <li class="reveal"><span class="num">08</span><h3>Te tratamos con calidez y respeto</h3><p>Aquí no eres un número de pedido, sino una persona bienvenida.</p></li>
+          <li class="reveal"><span class="num">09</span><h3>Protegemos tu confianza y privacidad</h3><p>Manejamos tu información y tus datos con absoluta responsabilidad.</p></li>
+          <li class="reveal"><span class="num">10</span><h3>Buscamos relaciones a largo plazo</h3><p>Preferimos ganarnos tu recomendación honesta antes que cerrar una venta rápida.</p></li>
+        </ol>
       </div>
     </section>
 
     <!-- Clientes -->
-    <section class="block--space" id="clientes">
+    <section class="clients" id="clientes">
       <div class="wrap">
-        <h2 class="clients__title reveal">Quienes han confiado en nosotros.</h2>
+        <p class="eyebrow eyebrow--center reveal">Quienes han confiado en nosotros</p>
       </div>
-      <!-- PENDIENTE: reemplazar cada texto por <img src="/assets/clientes/marca.svg" alt="Marca"> -->
+      <!-- PENDIENTE: reemplazar cada <span> por <img src="/assets/clientes/marca.svg" alt="Marca"> -->
       <div class="marquee" aria-label="Clientes">
         <div class="marquee__track">
-          <div class="client">Cliente 01</div><div class="client">Cliente 02</div><div class="client">Cliente 03</div><div class="client">Cliente 04</div><div class="client">Cliente 05</div><div class="client">Cliente 06</div>
-          <div class="client" aria-hidden="true">Cliente 01</div><div class="client" aria-hidden="true">Cliente 02</div><div class="client" aria-hidden="true">Cliente 03</div><div class="client" aria-hidden="true">Cliente 04</div><div class="client" aria-hidden="true">Cliente 05</div><div class="client" aria-hidden="true">Cliente 06</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ I. CONÓCENOS ============ -->
-    <section class="block" id="conocenos">
-      <div class="wrap">
-        <div class="panel">
-          <div class="about">
-            <h2 class="stack stack--light reveal"><span>Conó</span><span><i>CE</i></span><span>Nos</span></h2>
-            <div class="reveal">
-              <p class="about__lead">¿Nuestro secreto? <em>Creatividad, estrategia y músculo operativo</em> en un mismo lugar.</p>
-              <p>Diseñamos, producimos y ejecutamos proyectos diseñados para funcionar en el mundo real. Cuidamos cada detalle de principio a fin, porque entendemos que lo más importante no es solo producir un proyecto, sino <strong>garantizar el resultado</strong>.</p>
-            </div>
-          </div>
-
-          <h3 class="sub cond reveal"><svg class="star"><use href="#star"/></svg>Nuestros pilares</h3>
-          <ol class="pillars">
-            <li class="reveal"><span class="num">01</span><h3>Te escuchamos primero</h3><p>Antes de ofrecerte una solución, nos aseguramos de entender exactamente lo que necesitas.</p></li>
-            <li class="reveal"><span class="num">02</span><h3>Hablamos claro y sin letras chiquitas</h3><p>Te explicamos precios, tiempos y condiciones de forma directa y transparente.</p></li>
-            <li class="reveal"><span class="num">03</span><h3>Respetamos tu tiempo</h3><p>Cumplimos con los horarios acordados y te avisamos con anticipación si surge algún imprevisto.</p></li>
-            <li class="reveal"><span class="num">04</span><h3>Cuidamos la calidad en cada detalle</h3><p>Tratamos tu proyecto o compra con el mismo esmero con el que quisiéramos ser atendidos.</p></li>
-            <li class="reveal"><span class="num">05</span><h3>Damos la cara si algo falla</h3><p>Si cometemos un error, lo reconocemos y nos enfocamos en resolverlo, no en buscar excusas.</p></li>
-            <li class="reveal"><span class="num">06</span><h3>Te acompañamos después de la venta</h3><p>Nuestro compromiso no termina cuando pagas; seguimos disponibles para apoyarte y resolver dudas.</p></li>
-            <li class="reveal"><span class="num">07</span><h3>Valoramos tu opinión</h3><p>Tus comentarios y críticas nos ayudan a mejorar todos los días.</p></li>
-            <li class="reveal"><span class="num">08</span><h3>Te tratamos con calidez y respeto</h3><p>Aquí no eres un número de pedido, sino una persona bienvenida.</p></li>
-            <li class="reveal"><span class="num">09</span><h3>Protegemos tu confianza y privacidad</h3><p>Manejamos tu información y tus datos con absoluta responsabilidad.</p></li>
-            <li class="reveal"><span class="num">10</span><h3>Buscamos relaciones a largo plazo</h3><p>Preferimos ganarnos tu recomendación honesta antes que cerrar una venta rápida.</p></li>
-          </ol>
+          <span class="client">Cliente 01</span><span class="client">Cliente 02</span><span class="client">Cliente 03</span><span class="client">Cliente 04</span><span class="client">Cliente 05</span><span class="client">Cliente 06</span><span class="client">Cliente 07</span><span class="client">Cliente 08</span>
+          <span class="client" aria-hidden="true">Cliente 01</span><span class="client" aria-hidden="true">Cliente 02</span><span class="client" aria-hidden="true">Cliente 03</span><span class="client" aria-hidden="true">Cliente 04</span><span class="client" aria-hidden="true">Cliente 05</span><span class="client" aria-hidden="true">Cliente 06</span><span class="client" aria-hidden="true">Cliente 07</span><span class="client" aria-hidden="true">Cliente 08</span>
         </div>
       </div>
     </section>
 
     <!-- ============ II. PROYECTOS ============ -->
-    <section class="block--space" id="proyectos">
+    <section class="section section--dark" id="proyectos">
       <div class="wrap">
-        <h2 class="stack reveal"><span>Pro</span><span><i>YEC</i></span><span>Tos</span></h2>
-        <p class="intro reveal">Sin grandes descripciones: así se ve lo que construimos, producimos y operamos.</p>
-
+        <div class="section__head section__head--row reveal">
+          <div>
+            <p class="eyebrow">Trabajo reciente</p>
+            <h2 class="display display--md">Proyectos</h2>
+          </div>
+          <p class="muted">Sin grandes descripciones: así se ve lo que hacemos.</p>
+        </div>
         <!-- Para poner las fotos: guarda proyecto-1.jpg … proyecto-5.jpg en /assets/proyectos/ -->
-        <div class="projects">
-          <figure class="shot" style="--img:url('/assets/proyectos/proyecto-1.jpg')">
+        <div class="gallery">
+          <figure class="shot shot--a reveal" style="--img:url('/assets/proyectos/proyecto-1.jpg')">
             <div class="shot__img" role="img" aria-label="Evento producido por LTC"></div>
-            <div class="shot__ph" aria-hidden="true"><img src="/assets/img/logo-ltc-claro.png" alt=""></div>
-            <figcaption><span class="pill">Un breve adelanto de lo que estuvimos construyendo recientemente.</span></figcaption>
+            <figcaption>“Un breve adelanto de lo que estuvimos construyendo recientemente.”</figcaption>
           </figure>
-          <figure class="shot" style="--img:url('/assets/proyectos/proyecto-2.jpg')">
+          <figure class="shot shot--b reveal" style="--img:url('/assets/proyectos/proyecto-2.jpg')">
             <div class="shot__img" role="img" aria-label="Montaje de evento"></div>
-            <div class="shot__ph" aria-hidden="true"><img src="/assets/img/logo-ltc-claro.png" alt=""></div>
-            <figcaption><span class="pill">De la idea al montaje: así se ve la ejecución en el mundo real.</span></figcaption>
+            <figcaption>“De la idea al montaje: así se ve la ejecución en el mundo real.”</figcaption>
           </figure>
-          <figure class="shot" style="--img:url('/assets/proyectos/proyecto-3.jpg')">
+          <figure class="shot shot--c reveal" style="--img:url('/assets/proyectos/proyecto-3.jpg')">
             <div class="shot__img" role="img" aria-label="Producción de evento"></div>
-            <div class="shot__ph" aria-hidden="true"><img src="/assets/img/logo-ltc-claro.png" alt=""></div>
-            <figcaption><span class="pill">Fragmentos de una producción diseñada para conectar.</span></figcaption>
+            <figcaption>“Fragmentos de una producción diseñada para conectar.”</figcaption>
           </figure>
-          <figure class="shot" style="--img:url('/assets/proyectos/proyecto-4.jpg')">
+          <figure class="shot shot--d reveal" style="--img:url('/assets/proyectos/proyecto-4.jpg')">
             <div class="shot__img" role="img" aria-label="Reto operativo"></div>
-            <div class="shot__ph" aria-hidden="true"><img src="/assets/img/logo-ltc-claro.png" alt=""></div>
-            <figcaption><span class="pill">Una mirada rápida a uno de nuestros últimos retos operativos.</span></figcaption>
+            <figcaption>“Una mirada rápida a uno de nuestros últimos retos operativos.”</figcaption>
           </figure>
-          <figure class="shot" style="--img:url('/assets/proyectos/proyecto-5.jpg')">
+          <figure class="shot shot--e reveal" style="--img:url('/assets/proyectos/proyecto-5.jpg')">
             <div class="shot__img" role="img" aria-label="Experiencia a la medida"></div>
-            <div class="shot__ph" aria-hidden="true"><img src="/assets/img/logo-ltc-claro.png" alt=""></div>
-            <figcaption><span class="pill">Así se vive una experiencia diseñada a la medida.</span></figcaption>
+            <figcaption>“Así se vive una experiencia diseñada a la medida.”</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ============ III. SERVICIOS ============ -->
-    <section class="block" id="servicios">
+    <!-- ============ III. SERVICIOS (MENÚ) ============ -->
+    <section class="section" id="servicios">
       <div class="wrap">
-        <div class="panel">
-          <h2 class="stack stack--light reveal"><span>Servi</span><span><i>CIOS</i></span></h2>
-          <div class="stars" aria-hidden="true">
-            <svg class="star"><use href="#star"/></svg><svg class="star"><use href="#star"/></svg><svg class="star"><use href="#star"/></svg><svg class="star"><use href="#star"/></svg>
-          </div>
+        <div class="section__head reveal">
+          <p class="eyebrow">Menú</p>
+          <h2 class="display display--md">Lo que<br><span class="hl hl--dark">hacemos</span></h2>
+        </div>
 
-          <div class="services">
-            <article class="service reveal">
-              <h3 class="cond">Producción de Eventos, Arquitectura Efímera y Fabricación</h3>
-              <ul class="tags"><li>Congresos</li><li>Convenciones</li><li>Conciertos</li><li>Eventos masivos</li><li>Stands y displays</li><li>Iluminación y audio</li></ul>
-              <div class="illus" aria-hidden="true">
-                <svg viewBox="0 0 320 180">
-                  <rect x="40" y="22" width="240" height="12" rx="3" fill="#0b0f0c"/>
-                  <rect x="48" y="34" width="8" height="104" fill="#0b0f0c"/><rect x="264" y="34" width="8" height="104" fill="#0b0f0c"/>
-                  <polygon points="100,34 70,128 130,128" fill="#9fe07f" opacity=".55"/>
-                  <polygon points="220,34 190,128 250,128" fill="#9fe07f" opacity=".55"/>
-                  <rect x="92" y="30" width="16" height="10" rx="2" fill="#365e3e"/><rect x="212" y="30" width="16" height="10" rx="2" fill="#365e3e"/>
-                  <polygon points="30,138 290,138 270,160 50,160" fill="#365e3e"/>
-                  <rect x="130" y="88" width="60" height="50" rx="4" fill="#7b9f74"/><rect x="130" y="88" width="60" height="12" rx="3" fill="#10361f"/>
-                  <use href="#star" x="276" y="56" width="22" height="22" fill="#0b0f0c"/>
-                  <use href="#star" x="18" y="60" width="16" height="16" fill="#9fe07f"/>
-                </svg>
-              </div>
+        <div class="services">
+          <article class="service reveal" id="serv-1">
+            <div class="service__num">01</div>
+            <div class="service__body">
+              <h3>Producción de Eventos, Arquitectura Efímera y Fabricación</h3>
+              <ul class="tags"><li>Congresos</li><li>Convenciones</li><li>Conciertos</li><li>Eventos masivos</li><li>Stands</li><li>Iluminación y audio</li></ul>
               <p>Ejecución integral de congresos, convenciones, conferencias, conciertos y eventos masivos. Somos fabricantes directos de displays, mobiliario y stands a la medida, respaldados por nuestra propia infraestructura de iluminación profesional y sonorización.</p>
-            </article>
+              <a href="#contacto" class="service__cta" data-servicio="Producción de eventos / Arquitectura efímera">Cotizar este servicio →</a>
+            </div>
+          </article>
 
-            <article class="service reveal">
-              <h3 class="cond">Marketing Experiencial, BTL y Mecatrónica</h3>
+          <article class="service reveal" id="serv-2">
+            <div class="service__num">02</div>
+            <div class="service__body">
+              <h3>Marketing Experiencial, BTL y Mecatrónica</h3>
               <ul class="tags"><li>Activaciones</li><li>Lanzamientos</li><li>Shopper MKT</li><li>Mecatrónica</li><li>Realidad Aumentada</li></ul>
-              <div class="illus" aria-hidden="true">
-                <svg viewBox="0 0 320 180">
-                  <rect x="70" y="140" width="70" height="18" rx="4" fill="#0b0f0c"/>
-                  <rect x="96" y="96" width="18" height="48" rx="6" fill="#365e3e" transform="rotate(-18 105 140)"/>
-                  <circle cx="118" cy="96" r="12" fill="#0b0f0c"/>
-                  <rect x="118" y="86" width="74" height="18" rx="7" fill="#7b9f74" transform="rotate(-24 118 96)"/>
-                  <circle cx="186" cy="66" r="10" fill="#0b0f0c"/>
-                  <path d="M192 60 l22 -8 M192 72 l22 6" stroke="#0b0f0c" stroke-width="7" stroke-linecap="round"/>
-                  <g transform="translate(250 112)">
-                    <circle r="26" fill="#365e3e"/><circle r="10" fill="#e9e8e3"/>
-                    <g fill="#365e3e"><rect x="-6" y="-34" width="12" height="12" rx="2"/><rect x="-6" y="22" width="12" height="12" rx="2"/><rect x="-34" y="-6" width="12" height="12" rx="2"/><rect x="22" y="-6" width="12" height="12" rx="2"/></g>
-                  </g>
-                  <use href="#star" x="216" y="22" width="26" height="26" fill="#9fe07f"/>
-                  <use href="#star" x="34" y="40" width="18" height="18" fill="#0b0f0c"/>
-                </svg>
-              </div>
               <p>Diseño y operación de activaciones de marca, lanzamientos y estrategias en punto de venta (Shopper MKT). Integramos desarrollo mecatrónico para experiencias automatizadas y Realidad Aumentada (AR) que sorprenden al consumidor en entornos presenciales o virtuales.</p>
-            </article>
+              <a href="#contacto" class="service__cta" data-servicio="Marketing experiencial, BTL y mecatrónica">Cotizar este servicio →</a>
+            </div>
+          </article>
 
-            <article class="service reveal">
-              <h3 class="cond">Producción Audiovisual y Fotografía</h3>
+          <article class="service reveal" id="serv-3">
+            <div class="service__num">03</div>
+            <div class="service__body">
+              <h3>Producción Audiovisual y Fotografía</h3>
               <ul class="tags"><li>Foto de producto</li><li>Retrato ejecutivo</li><li>Fotorreportaje</li><li>Videomemorias</li><li>Cápsulas de marca</li><li>Piezas Hero</li></ul>
-              <div class="illus" aria-hidden="true">
-                <svg viewBox="0 0 320 180">
-                  <rect x="86" y="50" width="148" height="96" rx="14" fill="#0b0f0c"/>
-                  <rect x="110" y="38" width="44" height="18" rx="5" fill="#0b0f0c"/>
-                  <circle cx="160" cy="98" r="34" fill="#365e3e"/><circle cx="160" cy="98" r="22" fill="#7b9f74"/><circle cx="160" cy="98" r="10" fill="#10361f"/>
-                  <rect x="200" y="62" width="20" height="10" rx="3" fill="#9fe07f"/>
-                  <use href="#star" x="236" y="20" width="34" height="34" fill="#9fe07f"/>
-                  <use href="#star" x="52" y="112" width="22" height="22" fill="#9fe07f"/>
-                  <use href="#star" x="60" y="34" width="14" height="14" fill="#0b0f0c"/>
-                </svg>
-              </div>
               <p>Cobertura y creación de contenido corporativo y comercial: fotografía de producto, estudio, retrato ejecutivo y fotorreportaje; además de videomemorias, entrevistas, tutoriales, cápsulas de marca y piezas Hero.</p>
-            </article>
+              <a href="#contacto" class="service__cta" data-servicio="Producción audiovisual y fotografía">Cotizar este servicio →</a>
+            </div>
+          </article>
 
-            <article class="service reveal">
-              <h3 class="cond">Innovación Digital, VFX e Inteligencia Artificial</h3>
+          <article class="service reveal" id="serv-4">
+            <div class="service__num">04</div>
+            <div class="service__body">
+              <h3>Innovación Digital, VFX e Inteligencia Artificial</h3>
               <ul class="tags"><li>Eventos digitales</li><li>Contenido inmersivo</li><li>Foto y video en tiempo real</li><li>VFX</li><li>IA</li></ul>
-              <div class="illus" aria-hidden="true">
-                <svg viewBox="0 0 320 180">
-                  <rect x="118" y="24" width="84" height="140" rx="14" fill="#0b0f0c"/>
-                  <rect x="126" y="36" width="68" height="112" rx="6" fill="#365e3e"/>
-                  <polygon points="160,58 186,72 160,86 134,72" fill="#9fe07f"/>
-                  <polygon points="134,72 160,86 160,116 134,102" fill="#7b9f74"/>
-                  <polygon points="186,72 160,86 160,116 186,102" fill="#10361f"/>
-                  <path d="M214 70 q24 -6 40 -26 M214 96 q30 4 50 22" stroke="#0b0f0c" stroke-width="4" fill="none" stroke-dasharray="6 6"/>
-                  <use href="#star" x="250" y="26" width="28" height="28" fill="#9fe07f"/>
-                  <use href="#star" x="256" y="108" width="20" height="20" fill="#0b0f0c"/>
-                  <use href="#star" x="62" y="56" width="30" height="30" fill="#9fe07f"/>
-                  <use href="#star" x="80" y="120" width="14" height="14" fill="#0b0f0c"/>
-                </svg>
-              </div>
               <p>Desarrollo de eventos y promoción digital, contenido inmersivo y experiencias interactivas de foto y video en tiempo real potenciadas con efectos visuales (VFX) e Inteligencia Artificial (IA).</p>
-            </article>
-          </div>
+              <a href="#contacto" class="service__cta" data-servicio="Innovación digital, VFX e IA">Cotizar este servicio →</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ============ IV. CONTACTO ============ -->
-    <section class="block" id="contacto">
-      <div class="wrap">
-        <div class="panel contact">
-          <div class="reveal">
-            <h2 class="stack stack--light"><span>Con</span><span><i>TAC</i></span><span>To</span></h2>
-            <p class="intro">¿Tienes un reto? Cuéntanos tu idea. Te respondemos con claridad, tiempos y precios sin letras chiquitas.</p>
-            <ul class="contact__list">
-              <!-- PENDIENTE: poner teléfonos y dirección reales -->
-              <li><span>Teléfono</span><a href="tel:+520000000000">+52 (00) 0000 0000</a></li>
-              <li><span>WhatsApp</span><a href="https://wa.me/520000000000" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></li>
-              <li><span>Oficina</span><address>Calle y número, Colonia, Ciudad, Estado, C.P.</address></li>
-            </ul>
-          </div>
+    <section class="section section--deep" id="contacto">
+      <div class="wrap contact">
+        <div class="contact__info reveal">
+          <p class="eyebrow">Contacto</p>
+          <h2 class="display display--md">¿Tienes un<br><span class="hl">reto?</span></h2>
+          <p class="lead lead--light">Cuéntanos tu idea. Te respondemos con claridad, tiempos y precios sin letras chiquitas.</p>
 
-          <!-- Netlify Forms: los mensajes llegan a los correos configurados en Netlify; el correo no aparece en la página. -->
-          <form class="form reveal" name="contacto" method="POST" action="/bienvenida/gracias.html" data-netlify="true" netlify-honeypot="empresa_web">
-            <input type="hidden" name="form-name" value="contacto">
-            <p class="hidden"><label>No llenar: <input name="empresa_web"></label></p>
-            <div class="form__row">
-              <label>Nombre<input type="text" name="nombre" required autocomplete="name"></label>
-              <label>Empresa<input type="text" name="empresa" autocomplete="organization"></label>
-            </div>
-            <div class="form__row">
-              <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
-              <label>Teléfono<input type="tel" name="telefono" autocomplete="tel"></label>
-            </div>
-            <label>¿Qué necesitas?
-              <select name="servicio">
-                <option>Producción de eventos / Arquitectura efímera</option>
-                <option>Marketing experiencial, BTL y mecatrónica</option>
-                <option>Producción audiovisual y fotografía</option>
-                <option>Innovación digital, VFX e IA</option>
-                <option>Otro / No estoy seguro</option>
-              </select>
-            </label>
-            <label>Cuéntanos tu proyecto<textarea name="mensaje" rows="5" required></textarea></label>
-            <button type="submit" class="btn">Enviar mensaje</button>
-            <p class="form__note">Tus datos se manejan con absoluta responsabilidad.</p>
-          </form>
+          <ul class="contact__list">
+            <!-- PENDIENTE: poner teléfonos reales -->
+            <li><span>Teléfono</span><a href="tel:+520000000000">+52 (00) 0000 0000</a></li>
+            <li><span>WhatsApp</span><a href="https://wa.me/520000000000" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></li>
+            <!-- PENDIENTE: poner dirección real -->
+            <li><span>Oficina</span><address>Calle y número, Colonia,<br>Ciudad, Estado, C.P.</address></li>
+          </ul>
         </div>
+
+        <!-- Formulario: Netlify Forms. Los mensajes llegan a los correos configurados en Netlify; el correo no aparece en la página. -->
+        <form class="form reveal" name="contacto" method="POST" action="/bienvenida/gracias.html" data-netlify="true" netlify-honeypot="empresa_web">
+          <input type="hidden" name="form-name" value="contacto">
+          <p class="hidden"><label>No llenar: <input name="empresa_web"></label></p>
+
+          <div class="form__row">
+            <label>Nombre<input type="text" name="nombre" required autocomplete="name"></label>
+            <label>Empresa<input type="text" name="empresa" autocomplete="organization"></label>
+          </div>
+          <div class="form__row">
+            <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
+            <label>Teléfono<input type="tel" name="telefono" autocomplete="tel"></label>
+          </div>
+          <label>¿Qué necesitas?
+            <select name="servicio">
+              <option>Producción de eventos / Arquitectura efímera</option>
+              <option>Marketing experiencial, BTL y mecatrónica</option>
+              <option>Producción audiovisual y fotografía</option>
+              <option>Innovación digital, VFX e IA</option>
+              <option>Otro / No estoy seguro</option>
+            </select>
+          </label>
+          <label>Cuéntanos tu proyecto<textarea name="mensaje" rows="5" required></textarea></label>
+          <button type="submit" class="btn btn--light">Enviar mensaje</button>
+          <p class="form__note">Tus datos se manejan con absoluta responsabilidad.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -285,11 +264,14 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="wrap footer__grid">
-      <img src="/assets/img/logo-ltc.png" alt="LTC Experiential" class="footer__logo" width="84" height="73">
+      <img src="/assets/img/logo-ltc-claro.png" alt="LTC Experiential" class="footer__logo" width="160" height="139">
       <nav aria-label="Pie de página">
-        <a href="#conocenos">Conócenos</a><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a>
+        <a href="#conocenos">Conócenos</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
       </nav>
-      <p class="footer__claim cond"><span>Ideas que se convierten</span><span>en experiencias</span></p>
+      <p class="footer__claim">Transformamos ideas en<br>experiencias memorables.</p>
     </div>
     <div class="wrap footer__bottom">
       <span>© <span id="year">2026</span> LTC Experiential. Todos los derechos reservados.</span>
@@ -297,6 +279,18 @@
     </div>
   </footer>
 
-  <script src="/assets/main.js?v=4" defer></script>
+  <!-- PENDIENTE: poner número real de WhatsApp -->
+  <a class="wa" href="https://wa.me/520000000000" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+
+  <!-- Visor de fotos de proyectos -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" aria-label="Cerrar">×</button>
+    <img alt="">
+    <p class="lightbox__cap"></p>
+  </div>
+
+  <script src="/assets/main.js?v=5" defer></script>
 </body>
 </html>

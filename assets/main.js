@@ -54,3 +54,48 @@ document.querySelectorAll(".shot").forEach((shot) => {
 // Año del footer
 const y = document.getElementById("year");
 if (y) y.textContent = new Date().getFullYear();
+
+// Sección activa en el menú
+const links = [...document.querySelectorAll('.nav__links a[href^="#"]:not(.btn)')];
+const secs = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+if ("IntersectionObserver" in window && secs.length) {
+  const so = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id));
+      }),
+    { rootMargin: "-45% 0px -50% 0px" }
+  );
+  secs.forEach((s) => so.observe(s));
+}
+
+// "Cotizar este servicio": preselecciona el servicio en el formulario
+document.querySelectorAll(".service__cta").forEach((a) =>
+  a.addEventListener("click", () => {
+    const sel = document.querySelector('.form select[name="servicio"]');
+    if (sel) sel.value = a.dataset.servicio;
+    setTimeout(() => document.querySelector('.form input[name="nombre"]')?.focus({ preventScroll: true }), 600);
+  })
+);
+
+// Visor de fotos de proyectos
+const lb = document.getElementById("lightbox");
+if (lb) {
+  const lbImg = lb.querySelector("img");
+  const lbCap = lb.querySelector(".lightbox__cap");
+  const close = () => { lb.hidden = true; document.body.style.overflow = ""; };
+  document.querySelectorAll(".shot").forEach((shot) =>
+    shot.addEventListener("click", () => {
+      if (!shot.classList.contains("has-img")) return;
+      const m = shot.style.getPropertyValue("--img").match(/url\(['"]?(.*?)['"]?\)/);
+      lbImg.src = m ? m[1] : "";
+      lbImg.alt = shot.querySelector(".shot__img")?.getAttribute("aria-label") || "";
+      lbCap.textContent = shot.querySelector("figcaption")?.textContent || "";
+      lb.hidden = false;
+      document.body.style.overflow = "hidden";
+    })
+  );
+  lb.addEventListener("click", (e) => { if (e.target === lb || e.target.closest(".lightbox__close")) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) close(); });
+}
