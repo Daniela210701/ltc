@@ -345,8 +345,7 @@ p { margin: 0 0 1em; }
 
 /* ===== Responsive: el título se ajusta al ancho de su columna ===== */
 .hero__text { min-width: 0; container-type: inline-size; }
-.hero .display { font-size: clamp(2.1rem, 10cqi, 5.4rem); overflow-wrap: break-word; }
-.display { overflow-wrap: break-word; }
+.hero .display { font-size: clamp(1.6rem, 9.2cqi, 5.4rem); }
 .display--md { font-size: clamp(2rem, 7.6vw, 4.6rem); }
 
 /* Tablet: una sola columna, panel del logo arriba */
@@ -355,7 +354,6 @@ p { margin: 0 0 1em; }
   .hero__visual { order: -1; width: 100%; max-width: 560px; }
   .hero__card { aspect-ratio: 16 / 10; }
   .hero__mark { width: 40%; margin-bottom: 10%; }
-  .hero .display { font-size: clamp(2.1rem, 11cqi, 5.4rem); }
   .lead { max-width: 46ch; }
 }
 /* Celular */
@@ -367,7 +365,6 @@ p { margin: 0 0 1em; }
   .hero__badge--2 { top: 18%; right: 5%; }
   .hero__badge--3 { bottom: 6%; }
   .hero__cta .btn { flex: 1 1 100%; }
-  .hero .display { font-size: 11.5cqi; }
   .section { padding: 4rem 0; }
   .lightbox { padding: 4rem .8rem 1.5rem; }
   .wa { width: 52px; height: 52px; right: .9rem; }
