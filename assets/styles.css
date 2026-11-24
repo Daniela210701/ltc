@@ -418,3 +418,16 @@ p { margin: 0 0 1em; }
 .shot figcaption { inset: auto var(--mat) var(--mat) var(--mat); border-radius: 0 0 calc(var(--radius) - 6px) calc(var(--radius) - 6px); padding-bottom: 1.5rem; padding-inline: 1.6rem; }
 .shot::before, .shot__play { top: calc(var(--mat) + 1.1rem); left: calc(var(--mat) + 1.1rem); }
 .shot:hover .shot__img, .shot--video:hover .shot__video { transform: scale(1.02); }
+
+/* ===== Logos de clientes ===== */
+.marquee__track { gap: 1rem; padding-right: 1rem; animation-duration: 60s; }
+.client {
+  flex: none; width: 190px; height: 110px; padding: 18px 22px;
+  background: #fff; border-radius: 18px; border: 1px solid rgba(16,54,31,.08);
+  display: grid; place-items: center;
+  box-shadow: 0 10px 24px -18px rgba(16,54,31,.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.client:hover { transform: translateY(-3px); box-shadow: 0 16px 30px -18px rgba(16,54,31,.45); }
+.client img, .marquee .client img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; filter: none; opacity: 1; }
+@media (max-width: 600px) { .client { width: 150px; height: 88px; padding: 14px 16px; } }
