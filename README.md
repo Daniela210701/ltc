@@ -4,10 +4,9 @@ Sitio estático (HTML + CSS + JS), sin dependencias ni compilación. Se publica 
 
 ```
 /                       → redirige a /bienvenida/
-/bienvenida/            → sitio principal (protegido con contraseña)
+/bienvenida/            → sitio principal
 /bienvenida/gracias.html → página después de enviar el formulario
 /assets/                → estilos, JS, logo, fotos
-/netlify/edge-functions/proteger.js → candado de contraseña
 ```
 
 ## 1. Subir a GitHub
@@ -23,13 +22,6 @@ git push -u origin main
 ## 2. Publicar en Netlify
 1. netlify.com → **Add new site → Import an existing project → GitHub** → elegir el repo.
 2. Build command: *(vacío)* · Publish directory: `.` → **Deploy**.
-3. **Site configuration → Environment variables** → agregar:
-   - `SITE_PASSWORD` = la contraseña para entrar (obligatoria)
-   - `SITE_USER` = el usuario (opcional; si no se pone, es `ltc`)
-4. **Deploys → Trigger deploy** para que tome la contraseña.
-
-Al entrar a `/bienvenida` el navegador pide usuario y contraseña.
-
 ## 3. Formulario de contacto (sin mostrar el correo)
 Usa **Netlify Forms**, que ya viene activado en el HTML.
 - Netlify → **Forms** → activar *Form detection* (si lo pide) y volver a desplegar.
@@ -53,4 +45,3 @@ Usa **Netlify Forms**, que ya viene activado en el HTML.
 python3 -m http.server 8000
 # abrir http://localhost:8000/bienvenida/
 ```
-(En local no pide contraseña; eso solo funciona en Netlify.)
