@@ -306,3 +306,39 @@ p { margin: 0 0 1em; }
 .wa { position: fixed; right: 1.2rem; bottom: 4.4rem; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--verde); display: grid; place-items: center; box-shadow: 0 10px 30px rgba(16,54,31,.35); transition: transform .2s ease, background .2s ease; }
 .wa:hover { transform: scale(1.08); background: var(--verde-osc); }
 .wa svg { width: 30px; height: 30px; fill: var(--crema); }
+
+/* ===== Portada rediseñada ===== */
+.hero { padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3rem, 6vw, 5rem); }
+.hero__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(2rem, 5vw, 5rem); }
+.hero .display { font-size: clamp(2.6rem, 5.4vw, 5.6rem); }
+.hero__visual { position: relative; }
+.hero__card {
+  position: relative; aspect-ratio: 1 / 1.05; border-radius: 36px; overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 48%, #fff 0%, rgba(255,255,255,0) 58%),
+    linear-gradient(rgba(16,54,31,.07) 1px, transparent 1px) 0 0 / 36px 36px,
+    linear-gradient(90deg, rgba(16,54,31,.07) 1px, transparent 1px) 0 0 / 36px 36px,
+    var(--menta);
+  display: grid; place-items: center;
+  box-shadow: 0 30px 60px -30px rgba(16,54,31,.35);
+}
+.hero__mark { width: 68%; filter: drop-shadow(0 24px 28px rgba(16,54,31,.28)); animation: float 7s ease-in-out infinite; }
+.hero__badge {
+  position: absolute; padding: .55em 1.05em; border-radius: 999px;
+  background: var(--papel); color: var(--verde-osc);
+  font-size: clamp(.68rem, .9vw, .8rem); font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(16,54,31,.12); white-space: nowrap;
+}
+.hero__badge--1 { top: 9%; left: 8%; }
+.hero__badge--2 { top: 20%; right: 7%; background: var(--verde); color: var(--crema); }
+.hero__badge--3 { bottom: 9%; left: 50%; transform: translateX(-50%); background: var(--verde-osc); color: var(--crema); }
+.hero__logo { display: none; }
+
+@media (max-width: 960px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__visual { order: -1; max-width: 420px; width: 100%; }
+  .hero__card { aspect-ratio: 4 / 3; }
+  .hero__mark { width: 52%; }
+}
+.hero__mark { margin-bottom: 8%; }
+@media (max-width: 960px) { .hero__mark { width: 44%; margin-bottom: 12%; } .hero__badge--3 { bottom: 7%; } }
