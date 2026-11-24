@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=14">
+  <link rel="stylesheet" href="/assets/styles.css?v=17">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -174,31 +174,132 @@
             <p class="eyebrow">Trabajo reciente</p>
             <h2 class="display display--md">Proyectos</h2>
           </div>
-          <p class="muted">Sin grandes descripciones: así se ve lo que hacemos.</p>
+          <p class="muted">Sin grandes descripciones: así se ve lo que diseñamos, fabricamos y operamos.</p>
         </div>
-        <!-- Para poner las fotos: guarda proyecto-1.jpg … proyecto-5.jpg en /assets/proyectos/ -->
-        <div class="gallery">
-          <figure class="shot shot--a shot--video reveal" data-video="/assets/proyectos/evento.mp4">
-            <video class="shot__video" src="/assets/proyectos/evento.mp4" poster="/assets/proyectos/evento.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Stand de evento producido por LTC"></video>
-            <span class="shot__play">▶ Ver con sonido</span>
-            <figcaption>“Así se vive una experiencia diseñada a la medida.”</figcaption>
+        <div class="pfilters" role="group" aria-label="Filtrar proyectos">
+          <button class="pfilter is-active" data-filter="todos">Todos</button>
+          <button class="pfilter" data-filter="eventos">Eventos</button>
+          <button class="pfilter" data-filter="fabricacion">Stands y fabricación</button>
+          <button class="pfilter" data-filter="btl">Activaciones BTL</button>
+          <button class="pfilter" data-filter="audiovisual">Audiovisual</button>
+        </div>
+        <div class="pgrid">
+          <figure class="tile tile--wide" data-cat="eventos" data-video="/assets/proyectos/evento.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/evento.mp4" poster="/assets/proyectos/evento.jpg" muted loop playsinline preload="none" aria-label="Amazon Prime Video"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Amazon Prime Video</span>
+            <figcaption>Así se vive una experiencia diseñada a la medida.</figcaption>
           </figure>
-          <figure class="shot shot--b shot--video reveal" data-video="/assets/proyectos/taller.mp4">
-            <video class="shot__video" src="/assets/proyectos/taller.mp4" poster="/assets/proyectos/taller.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Taller de fabricación de LTC"></video>
-            <span class="shot__play">▶ Ver con sonido</span>
-            <figcaption>“Un breve adelanto de lo que estuvimos construyendo recientemente.”</figcaption>
+          <figure class="tile tile--wide" data-cat="fabricacion" data-video="/assets/proyectos/taller.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/taller.mp4" poster="/assets/proyectos/taller.jpg" muted loop playsinline preload="none" aria-label="Nuestro taller"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Nuestro taller</span>
+            <figcaption>Un breve adelanto de lo que estuvimos construyendo recientemente.</figcaption>
           </figure>
-          <figure class="shot shot--c reveal" style="--img:url('/assets/proyectos/proyecto-3.jpg?v=2')">
-            <div class="shot__img" role="img" aria-label="Stand de día montado por LTC"></div>
-            <figcaption>“De la idea al montaje: así se ve la ejecución en el mundo real.”</figcaption>
+          <figure class="tile tile--tall" data-cat="btl" data-video="/assets/proyectos/puerta-gente.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/puerta-gente.mp4" poster="/assets/proyectos/puerta-gente.jpg" muted loop playsinline preload="none" aria-label="Mercado Libre"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Mercado Libre</span>
+            <figcaption>Una mirada rápida a uno de nuestros últimos retos operativos.</figcaption>
           </figure>
-          <figure class="shot shot--d reveal" style="--img:url('/assets/proyectos/proyecto-4.jpg?v=2')">
-            <div class="shot__img" role="img" aria-label="Producción de evento"></div>
-            <figcaption>“Fragmentos de una producción diseñada para conectar.”</figcaption>
+          <figure class="tile tile--wide" data-cat="eventos" data-img="/assets/proyectos/congreso.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/congreso.jpg" alt="Congreso: Fragmentos de una producción diseñada para conectar." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Congreso</span>
+            <figcaption>Fragmentos de una producción diseñada para conectar.</figcaption>
           </figure>
-          <figure class="shot shot--e reveal" style="--img:url('/assets/proyectos/proyecto-5.jpg?v=2')">
-            <div class="shot__img" role="img" aria-label="Reto operativo"></div>
-            <figcaption>“Una mirada rápida a uno de nuestros últimos retos operativos.”</figcaption>
+          <figure class="tile tile--tall" data-cat="btl" data-img="/assets/proyectos/sephora-circo.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/sephora-circo.jpg" alt="Sephora Mitikah: Inauguraciones que convierten la apertura en espectáculo." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Sephora Mitikah</span>
+            <figcaption>Inauguraciones que convierten la apertura en espectáculo.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="fabricacion" data-img="/assets/proyectos/motorola.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/motorola.jpg" alt="Motorola razr · Render: Vitrinas de exhibición diseñadas al detalle." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Motorola razr · Render</span>
+            <figcaption>Vitrinas de exhibición diseñadas al detalle.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-img="/assets/proyectos/nescafe-dj.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/nescafe-dj.jpg" alt="Nescafé: Ambientación, música y diseño en un mismo concepto." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nescafé</span>
+            <figcaption>Ambientación, música y diseño en un mismo concepto.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="eventos" data-img="/assets/proyectos/prime-dia.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/prime-dia.jpg" alt="Amazon Prime Video: De la idea al montaje: así se ve la ejecución en el mundo real." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Amazon Prime Video</span>
+            <figcaption>De la idea al montaje: así se ve la ejecución en el mundo real.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-video="/assets/proyectos/futbol.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/futbol.mp4" poster="/assets/proyectos/futbol.jpg" muted loop playsinline preload="none" aria-label="Juego LTC"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Juego LTC</span>
+            <figcaption>Juegos de marca que invitan a participar.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="fabricacion" data-img="/assets/proyectos/mondelez.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mondelez.jpg" alt="Mondelēz Snacking México: Espacios inmersivos para que la marca se viva." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mondelēz Snacking México</span>
+            <figcaption>Espacios inmersivos para que la marca se viva.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="audiovisual" data-video="/assets/proyectos/pepsi.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/pepsi.mp4" poster="/assets/proyectos/pepsi.jpg" muted loop playsinline preload="none" aria-label="Pepsi"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Pepsi</span>
+            <figcaption>Contenido 3D para lanzamientos de producto.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="fabricacion" data-img="/assets/proyectos/eutelsat.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/eutelsat.jpg" alt="Eutelsat OneWeb: Letras corpóreas y mobiliario fabricados a la medida." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Eutelsat OneWeb</span>
+            <figcaption>Letras corpóreas y mobiliario fabricados a la medida.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="audiovisual" data-img="/assets/proyectos/retrato.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/retrato.jpg" alt="Fotografía: Retratos que capturan la emoción." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Fotografía</span>
+            <figcaption>Retratos que capturan la emoción.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-img="/assets/proyectos/nescafe-aro.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/nescafe-aro.jpg" alt="Nescafé Taster’s Choice: Activaciones que despiertan los sentidos." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nescafé Taster’s Choice</span>
+            <figcaption>Activaciones que despiertan los sentidos.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="fabricacion" data-img="/assets/proyectos/binkio.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/binkio.jpg" alt="Binkio · Arkangeles: Stands para exposiciones y ferias." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Binkio · Arkangeles</span>
+            <figcaption>Stands para exposiciones y ferias.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="eventos" data-img="/assets/proyectos/isadora-van.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isadora-van.jpg" alt="Isadora: Logística y traslados para experiencias de marca." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isadora</span>
+            <figcaption>Logística y traslados para experiencias de marca.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="eventos" data-video="/assets/proyectos/niebla.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/niebla.mp4" poster="/assets/proyectos/niebla.jpg" muted loop playsinline preload="none" aria-label="Efectos especiales"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Efectos especiales</span>
+            <figcaption>Efectos que transforman el espacio.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-video="/assets/proyectos/puerta.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/puerta.mp4" poster="/assets/proyectos/puerta.jpg" muted loop playsinline preload="none" aria-label="Mercado Libre"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Mercado Libre</span>
+            <figcaption>Una puerta gigante, fabricada para sorprender.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="fabricacion" data-img="/assets/proyectos/taller-foto.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/taller-foto.jpg" alt="Nuestro taller: Aquí nace cada proyecto: diseño, corte y armado propio." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nuestro taller</span>
+            <figcaption>Aquí nace cada proyecto: diseño, corte y armado propio.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-img="/assets/proyectos/sephora-host.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/sephora-host.jpg" alt="Sephora: Protocolo y atención para recibir a cada invitado." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Sephora</span>
+            <figcaption>Protocolo y atención para recibir a cada invitado.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="eventos" data-img="/assets/proyectos/isadora-noche.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isadora-noche.jpg" alt="Isadora: Cada detalle del recorrido, cuidado de principio a fin." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isadora</span>
+            <figcaption>Cada detalle del recorrido, cuidado de principio a fin.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="eventos" data-img="/assets/proyectos/isadora-grupo.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isadora-grupo.jpg" alt="Isadora: Experiencias que se viven en primera fila." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isadora</span>
+            <figcaption>Experiencias que se viven en primera fila.</figcaption>
           </figure>
         </div>
       </div>
@@ -326,11 +427,13 @@
   <!-- Visor de fotos de proyectos -->
   <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox__close" aria-label="Cerrar">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" aria-label="Anterior">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" aria-label="Siguiente">›</button>
     <img alt="">
     <video controls playsinline hidden></video>
     <p class="lightbox__cap"></p>
   </div>
 
-  <script src="/assets/main.js?v=14" defer></script>
+  <script src="/assets/main.js?v=17" defer></script>
 </body>
 </html>

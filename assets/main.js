@@ -42,14 +42,6 @@ if ("IntersectionObserver" in window) {
   items.forEach((el) => el.classList.add("is-in"));
 }
 
-// Proyectos: si existe la foto, quitar la etiqueta "Foto del evento"
-document.querySelectorAll(".shot").forEach((shot) => {
-  const m = shot.style.getPropertyValue("--img").match(/url\(['"]?(.*?)['"]?\)/);
-  if (!m) return;
-  const img = new Image();
-  img.onload = () => shot.classList.add("has-img");
-  img.src = m[1];
-});
 
 // Año del footer
 const y = document.getElementById("year");
@@ -79,38 +71,77 @@ document.querySelectorAll(".service__cta").forEach((a) =>
   })
 );
 
-// Visor de fotos y videos de proyectos
+// ===== Galería de proyectos =====
+const tiles = [...document.querySelectorAll(".tile")];
+
+// Filtros
+document.querySelectorAll(".pfilter").forEach((btn) =>
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".pfilter").forEach((b) => b.classList.toggle("is-active", b === btn));
+    const f = btn.dataset.filter;
+    tiles.forEach((t) => (t.hidden = f !== "todos" && t.dataset.cat !== f));
+  })
+);
+
+// Videos: se reproducen solo cuando están en pantalla
+if ("IntersectionObserver" in window) {
+  const vo = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        const v = e.target.querySelector("video");
+        if (!v) return;
+        if (e.isIntersecting) { v.preload = "auto"; v.play().catch(() => {}); }
+        else v.pause();
+      }),
+    { threshold: 0.25 }
+  );
+  tiles.filter((t) => t.dataset.video).forEach((t) => vo.observe(t));
+}
+
+// Visor con flechas
 const lb = document.getElementById("lightbox");
 if (lb) {
   const lbImg = lb.querySelector("img");
   const lbVid = lb.querySelector("video");
   const lbCap = lb.querySelector(".lightbox__cap");
-  const close = () => {
-    lb.hidden = true;
-    document.body.style.overflow = "";
-    if (lbVid) { lbVid.pause(); lbVid.removeAttribute("src"); lbVid.load(); }
+  let current = -1;
+  const visible = () => tiles.filter((t) => !t.hidden);
+  const show = (tile) => {
+    const list = visible();
+    current = list.indexOf(tile);
+    const tag = tile.querySelector(".tile__tag")?.textContent || "";
+    const cap = tile.querySelector("figcaption")?.textContent || "";
+    if (lbVid) { lbVid.pause(); }
+    if (tile.dataset.video) {
+      lbImg.hidden = true; lbVid.hidden = false;
+      lbVid.src = tile.dataset.video; lbVid.muted = false;
+      lbVid.play().catch(() => {});
+    } else {
+      lbVid.hidden = true; lbVid.removeAttribute("src");
+      lbImg.hidden = false; lbImg.src = tile.dataset.img; lbImg.alt = tag;
+    }
+    lbCap.textContent = tag ? `${tag} — ${cap}` : cap;
+    lb.hidden = false;
+    document.body.style.overflow = "hidden";
   };
-  document.querySelectorAll(".shot").forEach((shot) =>
-    shot.addEventListener("click", () => {
-      const cap = shot.querySelector("figcaption")?.textContent || "";
-      if (shot.dataset.video && lbVid) {
-        lbImg.hidden = true; lbVid.hidden = false;
-        lbVid.src = shot.dataset.video; lbVid.muted = false;
-        lbVid.play().catch(() => {});
-      } else if (shot.classList.contains("has-img")) {
-        const m = shot.style.getPropertyValue("--img").match(/url\(['"]?(.*?)['"]?\)/);
-        if (lbVid) lbVid.hidden = true;
-        lbImg.hidden = false;
-        lbImg.src = m ? m[1] : "";
-        lbImg.alt = shot.querySelector(".shot__img")?.getAttribute("aria-label") || "";
-      } else return;
-      lbCap.textContent = cap;
-      lb.hidden = false;
-      document.body.style.overflow = "hidden";
-    })
-  );
+  const step = (d) => { const list = visible(); if (!list.length) return; show(list[(current + d + list.length) % list.length]); };
+  const close = () => {
+    lb.hidden = true; document.body.style.overflow = "";
+    lbVid.pause(); lbVid.removeAttribute("src"); lbVid.load();
+  };
+  tiles.forEach((t) => {
+    t.addEventListener("click", () => show(t));
+    t.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); show(t); } });
+  });
+  lb.querySelector(".lightbox__nav--prev")?.addEventListener("click", (e) => { e.stopPropagation(); step(-1); });
+  lb.querySelector(".lightbox__nav--next")?.addEventListener("click", (e) => { e.stopPropagation(); step(1); });
   lb.addEventListener("click", (e) => { if (e.target === lb || e.target.closest(".lightbox__close")) close(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) close(); });
+  document.addEventListener("keydown", (e) => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") step(1);
+    if (e.key === "ArrowLeft") step(-1);
+  });
 }
 
 // Ajuste automático: si una palabra del título no cabe en su columna, se reduce la letra
