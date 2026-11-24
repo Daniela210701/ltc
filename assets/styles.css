@@ -431,3 +431,11 @@ p { margin: 0 0 1em; }
 .client:hover { transform: translateY(-3px); box-shadow: 0 16px 30px -18px rgba(16,54,31,.45); }
 .client img, .marquee .client img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; filter: none; opacity: 1; }
 @media (max-width: 600px) { .client { width: 150px; height: 88px; padding: 14px 16px; } }
+
+/* Logos: tamaño fijo para que siempre quepan completos */
+.marquee .client { width: 200px; height: 112px; padding: 0; aspect-ratio: auto; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.marquee .client img { display: block; max-width: 150px; max-height: 72px; width: auto; height: auto; object-fit: contain; }
+@media (max-width: 600px) {
+  .marquee .client { width: 156px; height: 92px; }
+  .marquee .client img { max-width: 118px; max-height: 58px; }
+}
