@@ -97,19 +97,30 @@ moreBtn?.addEventListener("click", () => {
   moreBox.hidden = true;
 });
 
-// Videos: se reproducen solo cuando están en pantalla
+// Videos: vistas previas ligeras. Se precargan antes de llegar y se reproducen solo en pantalla
 if ("IntersectionObserver" in window) {
-  const vo = new IntersectionObserver(
+  const vtiles = tiles.filter((t) => t.dataset.video);
+  const preload = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const v = e.target.querySelector("video");
+        if (v && v.preload !== "auto") { v.preload = "auto"; v.load(); }
+        preload.unobserve(e.target);
+      }),
+    { rootMargin: "600px 0px" }
+  );
+  const playing = new IntersectionObserver(
     (entries) =>
       entries.forEach((e) => {
         const v = e.target.querySelector("video");
         if (!v) return;
-        if (e.isIntersecting) { v.preload = "auto"; v.play().catch(() => {}); }
+        if (e.isIntersecting) v.play().catch(() => {});
         else v.pause();
       }),
-    { threshold: 0.25 }
+    { threshold: 0.15 }
   );
-  tiles.filter((t) => t.dataset.video).forEach((t) => vo.observe(t));
+  vtiles.forEach((t) => { preload.observe(t); playing.observe(t); });
 }
 
 // Visor con flechas
@@ -128,7 +139,7 @@ if (lb) {
     if (lbVid) { lbVid.pause(); }
     if (tile.dataset.video) {
       lbImg.hidden = true; lbVid.hidden = false;
-      lbVid.src = tile.dataset.video; lbVid.muted = false;
+      lbVid.poster = tile.querySelector("video")?.poster || ""; lbVid.preload = "auto"; lbVid.src = tile.dataset.video; lbVid.muted = false;
       lbVid.play().catch(() => {});
     } else {
       lbVid.hidden = true; lbVid.removeAttribute("src");
