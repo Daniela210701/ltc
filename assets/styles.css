@@ -510,3 +510,19 @@ p { margin: 0 0 1em; }
   .tile--tall figcaption { display: none; }
 }
 
+
+/* ===== Mosaico de proyectos ===== */
+.tile--small { grid-column: span 1; grid-row: span 1; }
+.tile--small figcaption { opacity: 0; transform: translateY(8px); transition: opacity .3s ease, transform .3s ease; font-size: .8rem; padding: 2rem .9rem .9rem; }
+.tile--small:hover figcaption, .tile--small:focus-visible figcaption { opacity: 1; transform: none; }
+.tile--small .tile__tag { font-size: .6rem; }
+.pgrid.is-collapsed .tile.is-extra { display: none; }
+.pmore { display: flex; justify-content: center; margin-top: 2rem; }
+.pmore[hidden] { display: none; }
+.btn--ghost-light { background: transparent; color: var(--crema); border-color: rgba(243,241,232,.6); }
+.btn--ghost-light:hover { background: var(--crema); color: var(--verde-osc); border-color: var(--crema); }
+.btn--ghost-light span { opacity: .7; font-weight: 700; }
+@media (max-width: 760px) {
+  .tile--small figcaption { display: none; }
+  .tile--small .tile__tag { font-size: .52rem; padding: .4em .7em; }
+}

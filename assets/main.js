@@ -73,6 +73,7 @@ document.querySelectorAll(".service__cta").forEach((a) =>
 
 // ===== Galería de proyectos =====
 const tiles = [...document.querySelectorAll(".tile")];
+const grid = document.querySelector(".pgrid");
 
 // Filtros
 document.querySelectorAll(".pfilter").forEach((btn) =>
@@ -80,8 +81,21 @@ document.querySelectorAll(".pfilter").forEach((btn) =>
     document.querySelectorAll(".pfilter").forEach((b) => b.classList.toggle("is-active", b === btn));
     const f = btn.dataset.filter;
     tiles.forEach((t) => (t.hidden = f !== "todos" && t.dataset.cat !== f));
+    // En un filtro se ven todas las de esa categoría; en "Todos" se respeta el "Ver más"
+    if (grid) grid.classList.toggle("is-collapsed", f === "todos" && !expanded);
+    if (moreBox) moreBox.hidden = f !== "todos" || expanded;
   })
 );
+
+// "Ver más proyectos"
+const moreBtn = document.getElementById("pmore");
+const moreBox = moreBtn?.parentElement;
+let expanded = false;
+moreBtn?.addEventListener("click", () => {
+  expanded = true;
+  grid?.classList.remove("is-collapsed");
+  moreBox.hidden = true;
+});
 
 // Videos: se reproducen solo cuando están en pantalla
 if ("IntersectionObserver" in window) {
@@ -105,7 +119,7 @@ if (lb) {
   const lbVid = lb.querySelector("video");
   const lbCap = lb.querySelector(".lightbox__cap");
   let current = -1;
-  const visible = () => tiles.filter((t) => !t.hidden);
+  const visible = () => tiles.filter((t) => !t.hidden && t.offsetParent !== null);
   const show = (tile) => {
     const list = visible();
     current = list.indexOf(tile);

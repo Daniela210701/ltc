@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=18">
+  <link rel="stylesheet" href="/assets/styles.css?v=19">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -176,7 +176,14 @@
           </div>
           <p class="muted">Sin grandes descripciones: así se ve lo que diseñamos, fabricamos y operamos.</p>
         </div>
-        <div class="pgrid">
+        <div class="pfilters" role="group" aria-label="Filtrar proyectos">
+          <button class="pfilter is-active" data-filter="todos">Todos</button>
+          <button class="pfilter" data-filter="eventos">Eventos</button>
+          <button class="pfilter" data-filter="fabricacion">Stands y fabricación</button>
+          <button class="pfilter" data-filter="btl">Activaciones BTL</button>
+          <button class="pfilter" data-filter="audiovisual">Producción audiovisual</button>
+        </div>
+        <div class="pgrid is-collapsed">
           <figure class="tile tile--wide" data-cat="eventos" data-video="/assets/proyectos/evento.mp4" tabindex="0">
             <div class="tile__media"><video src="/assets/proyectos/evento.mp4" poster="/assets/proyectos/evento.jpg" muted loop playsinline preload="none" aria-label="Amazon Prime Video"></video></div>
             <span class="tile__play" aria-hidden="true">▶</span>
@@ -189,7 +196,322 @@
             <span class="tile__tag">Nuestro taller</span>
             <figcaption>Un breve adelanto de lo que estuvimos construyendo recientemente.</figcaption>
           </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-video="/assets/proyectos/puerta-ml.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/puerta-ml.mp4" poster="/assets/proyectos/puerta-ml.jpg" muted loop playsinline preload="none" aria-label="Mercado Libre"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Mercado Libre</span>
+            <figcaption>Una puerta gigante, fabricada para sorprender.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="fabricacion" data-img="/assets/proyectos/mondelez-stand.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mondelez-stand-t.jpg" alt="Mondelēz Snacking México: Espacios inmersivos para que la marca se viva." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mondelēz Snacking México</span>
+            <figcaption>Espacios inmersivos para que la marca se viva.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="eventos" data-img="/assets/proyectos/kfc-escenario.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/kfc-escenario-t.jpg" alt="KFC · Coca-Cola: Escenario, audio e iluminación para eventos masivos." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">KFC · Coca-Cola</span>
+            <figcaption>Escenario, audio e iluminación para eventos masivos.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="eventos" data-img="/assets/proyectos/congreso.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/congreso-t.jpg" alt="Congreso: Fragmentos de una producción diseñada para conectar." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Congreso</span>
+            <figcaption>Fragmentos de una producción diseñada para conectar.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-video="/assets/proyectos/carnation.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/carnation.mp4" poster="/assets/proyectos/carnation.jpg" muted loop playsinline preload="none" aria-label="Carnation"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Carnation</span>
+            <figcaption>Activaciones con música, luz y color.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="fabricacion" data-img="/assets/proyectos/isuzu-stand.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isuzu-stand-t.jpg" alt="Isuzu: Stands de gran formato, fabricados a la medida." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isuzu</span>
+            <figcaption>Stands de gran formato, fabricados a la medida.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="btl" data-img="/assets/proyectos/sephora-circo.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/sephora-circo-t.jpg" alt="Sephora Mitikah: Inauguraciones que convierten la apertura en espectáculo." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Sephora Mitikah</span>
+            <figcaption>Inauguraciones que convierten la apertura en espectáculo.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="fabricacion" data-img="/assets/proyectos/eutelsat-portal.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/eutelsat-portal-t.jpg" alt="Eutelsat OneWeb: Portales y escenografía que reciben a los invitados." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Eutelsat OneWeb</span>
+            <figcaption>Portales y escenografía que reciben a los invitados.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-video="/assets/proyectos/goles-ltc.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/goles-ltc.mp4" poster="/assets/proyectos/goles-ltc.jpg" muted loop playsinline preload="none" aria-label="Juego LTC"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Juego LTC</span>
+            <figcaption>Juegos de marca que invitan a participar.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="eventos" data-img="/assets/proyectos/exni-auditorio.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/exni-auditorio-t.jpg" alt="Exni 2024: Congresos con pantallas, escenario y producción técnica." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Exni 2024</span>
+            <figcaption>Congresos con pantallas, escenario y producción técnica.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="btl" data-img="/assets/proyectos/nestle-coffee-party.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/nestle-coffee-party-t.jpg" alt="Nestlé Coffee Party: Letras monumentales para momentos memorables." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nestlé Coffee Party</span>
+            <figcaption>Letras monumentales para momentos memorables.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="btl" data-img="/assets/proyectos/paramount-halo.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/paramount-halo-t.jpg" alt="Paramount+ · Halo: Activaciones que llevan la marca a la calle." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Paramount+ · Halo</span>
+            <figcaption>Activaciones que llevan la marca a la calle.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="fabricacion" data-img="/assets/proyectos/shakeshack-neon.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/shakeshack-neon-t.jpg" alt="Shake Shack: Señalética luminosa con identidad local." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Shake Shack</span>
+            <figcaption>Señalética luminosa con identidad local.</figcaption>
+          </figure>
+          <figure class="tile tile--tall" data-cat="btl" data-video="/assets/proyectos/dolce.mp4" tabindex="0">
+            <div class="tile__media"><video src="/assets/proyectos/dolce.mp4" poster="/assets/proyectos/dolce.jpg" muted loop playsinline preload="none" aria-label="Dolce"></video></div>
+            <span class="tile__play" aria-hidden="true">▶</span>
+            <span class="tile__tag">Dolce</span>
+            <figcaption>Espacios para tomarse la foto y compartir la marca.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="eventos" data-img="/assets/proyectos/mayoly-tematico.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mayoly-tematico-t.jpg" alt="Mayoly: Ambientaciones temáticas para eventos corporativos." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mayoly</span>
+            <figcaption>Ambientaciones temáticas para eventos corporativos.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="fabricacion" data-img="/assets/proyectos/motorola-render.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/motorola-render-t.jpg" alt="Motorola razr · Render: Vitrinas de exhibición diseñadas al detalle." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Motorola razr · Render</span>
+            <figcaption>Vitrinas de exhibición diseñadas al detalle.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="btl" data-img="/assets/proyectos/nescafe-dj.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/nescafe-dj-t.jpg" alt="Nescafé: Ambientación, música y diseño en un mismo concepto." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nescafé</span>
+            <figcaption>Ambientación, música y diseño en un mismo concepto.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="audiovisual" data-img="/assets/proyectos/consolas-audio.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/consolas-audio-t.jpg" alt="Producción técnica: Audio profesional con equipo propio." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Producción técnica</span>
+            <figcaption>Audio profesional con equipo propio.</figcaption>
+          </figure>
+          <figure class="tile tile--wide" data-cat="fabricacion" data-img="/assets/proyectos/isuzu-20.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isuzu-20-t.jpg" alt="Isuzu · 20 aniversario: Stands que celebran la historia de la marca." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isuzu · 20 aniversario</span>
+            <figcaption>Stands que celebran la historia de la marca.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="btl" data-img="/assets/proyectos/nescafe-aro.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/nescafe-aro-t.jpg" alt="Nescafé Taster’s Choice: Activaciones que despiertan los sentidos." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nescafé Taster’s Choice</span>
+            <figcaption>Activaciones que despiertan los sentidos.</figcaption>
+          </figure>
+          <figure class="tile tile--small" data-cat="fabricacion" data-img="/assets/proyectos/mondelez-fachada.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mondelez-fachada-t.jpg" alt="Mondelēz: Fachadas con neón, textura y color." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mondelēz</span>
+            <figcaption>Fachadas con neón, textura y color.</figcaption>
+          </figure>
+          <figure class="tile tile--tall is-extra" data-cat="fabricacion" data-img="/assets/proyectos/sephora-escenografia.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/sephora-escenografia-t.jpg" alt="Sephora: Escenografía de circo para una inauguración." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Sephora</span>
+            <figcaption>Escenografía de circo para una inauguración.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="eventos" data-img="/assets/proyectos/carpa-escenario.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/carpa-escenario-t.jpg" alt="Evento al aire libre: Montajes al aire libre para cientos de invitados." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Evento al aire libre</span>
+            <figcaption>Montajes al aire libre para cientos de invitados.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/mercadopago-stand.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mercadopago-stand-t.jpg" alt="Mercado Pago: Stands para educación financiera." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mercado Pago</span>
+            <figcaption>Stands para educación financiera.</figcaption>
+          </figure>
+          <figure class="tile tile--wide is-extra" data-cat="btl" data-img="/assets/proyectos/perfect-match.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/perfect-match-t.jpg" alt="Perfect Match: Neón y escenografía para crear el momento de la foto." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Perfect Match</span>
+            <figcaption>Neón y escenografía para crear el momento de la foto.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/taller-foto.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/taller-foto-t.jpg" alt="Nuestro taller: Aquí nace cada proyecto: diseño, corte y armado propio." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nuestro taller</span>
+            <figcaption>Aquí nace cada proyecto: diseño, corte y armado propio.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="eventos" data-img="/assets/proyectos/mayoly-grupo.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mayoly-grupo-t.jpg" alt="Mayoly: Eventos corporativos con experiencia temática." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mayoly</span>
+            <figcaption>Eventos corporativos con experiencia temática.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="btl" data-img="/assets/proyectos/sephora-stand.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/sephora-stand-t.jpg" alt="Sephora: Puntos de experiencia que atraen todas las miradas." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Sephora</span>
+            <figcaption>Puntos de experiencia que atraen todas las miradas.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="audiovisual" data-img="/assets/proyectos/exni-cabina.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/exni-cabina-t.jpg" alt="Exni 2024: Cabina de control: video, audio y switcheo en vivo." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Exni 2024</span>
+            <figcaption>Cabina de control: video, audio y switcheo en vivo.</figcaption>
+          </figure>
+          <figure class="tile tile--wide is-extra" data-cat="fabricacion" data-img="/assets/proyectos/isuzu-camiones.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isuzu-camiones-t.jpg" alt="Isuzu: Exhibición de producto en piso de exposición." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isuzu</span>
+            <figcaption>Exhibición de producto en piso de exposición.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="eventos" data-img="/assets/proyectos/isadora-van.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isadora-van-t.jpg" alt="Isadora: Logística y traslados para experiencias de marca." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isadora</span>
+            <figcaption>Logística y traslados para experiencias de marca.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="btl" data-img="/assets/proyectos/isadora-pop.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isadora-pop-t.jpg" alt="Isadora: Material POP y exhibidores para punto de venta." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isadora</span>
+            <figcaption>Material POP y exhibidores para punto de venta.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="eventos" data-img="/assets/proyectos/carpa-monumental.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/carpa-monumental-t.jpg" alt="Carpa monumental: Carpas y estructuras para eventos masivos." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Carpa monumental</span>
+            <figcaption>Carpas y estructuras para eventos masivos.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="audiovisual" data-img="/assets/proyectos/pepsi.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/pepsi-t.jpg" alt="Pepsi: Contenido 3D para lanzamientos de producto." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Pepsi</span>
+            <figcaption>Contenido 3D para lanzamientos de producto.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/fortune-stand.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/fortune-stand-t.jpg" alt="Fortune International Group: Stands corporativos con acabados finos." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Fortune International Group</span>
+            <figcaption>Stands corporativos con acabados finos.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="btl" data-img="/assets/proyectos/gaming.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/gaming-t.jpg" alt="Gaming: Experiencias gamer con tecnología e iluminación." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Gaming</span>
+            <figcaption>Experiencias gamer con tecnología e iluminación.</figcaption>
+          </figure>
+          <figure class="tile tile--wide is-extra" data-cat="eventos" data-img="/assets/proyectos/montaje.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/montaje-t.jpg" alt="Montaje: De la idea al montaje: así se ve la ejecución en el mundo real." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Montaje</span>
+            <figcaption>De la idea al montaje: así se ve la ejecución en el mundo real.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="btl" data-img="/assets/proyectos/ruleta-tienda.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/ruleta-tienda-t.jpg" alt="Punto de venta: Dinámicas en tienda que conectan con el shopper." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Punto de venta</span>
+            <figcaption>Dinámicas en tienda que conectan con el shopper.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/mercadopago-gente.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mercadopago-gente-t.jpg" alt="Mercado Pago: Stands que se llenan de visitantes." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mercado Pago</span>
+            <figcaption>Stands que se llenan de visitantes.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="audiovisual" data-img="/assets/proyectos/cabina-gala.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/cabina-gala-t.jpg" alt="Producción técnica: Operación técnica en recintos de gala." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Producción técnica</span>
+            <figcaption>Operación técnica en recintos de gala.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="eventos" data-img="/assets/proyectos/salon-montaje.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/salon-montaje-t.jpg" alt="Montaje de salón: Una mirada rápida a uno de nuestros últimos retos operativos." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Montaje de salón</span>
+            <figcaption>Una mirada rápida a uno de nuestros últimos retos operativos.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/shakeshack-letras.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/shakeshack-letras-t.jpg" alt="Shake Shack: Letras corpóreas e iluminación a la medida." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Shake Shack</span>
+            <figcaption>Letras corpóreas e iluminación a la medida.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="eventos" data-img="/assets/proyectos/evento-institucional.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/evento-institucional-t.jpg" alt="Evento institucional: Escenarios para eventos institucionales." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Evento institucional</span>
+            <figcaption>Escenarios para eventos institucionales.</figcaption>
+          </figure>
+          <figure class="tile tile--tall is-extra" data-cat="btl" data-img="/assets/proyectos/sephora-host.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/sephora-host-t.jpg" alt="Sephora: Protocolo y atención para recibir a cada invitado." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Sephora</span>
+            <figcaption>Protocolo y atención para recibir a cada invitado.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/isuzu-display.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isuzu-display-t.jpg" alt="Isuzu: Mobiliario y displays de exhibición." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isuzu</span>
+            <figcaption>Mobiliario y displays de exhibición.</figcaption>
+          </figure>
+          <figure class="tile tile--wide is-extra" data-cat="audiovisual" data-img="/assets/proyectos/retrato.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/retrato-t.jpg" alt="Fotografía: Retratos que capturan la emoción." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Fotografía</span>
+            <figcaption>Retratos que capturan la emoción.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/expo-rosa.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/expo-rosa-t.jpg" alt="Expo: Stands para exposiciones y ferias." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Expo</span>
+            <figcaption>Stands para exposiciones y ferias.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/taller-juego.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/taller-juego-t.jpg" alt="Nuestro taller: Fabricación propia de juegos y activaciones." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nuestro taller</span>
+            <figcaption>Fabricación propia de juegos y activaciones.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/eutelsat-letras.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/eutelsat-letras-t.jpg" alt="Eutelsat OneWeb: Letras corpóreas y mobiliario a la medida." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Eutelsat OneWeb</span>
+            <figcaption>Letras corpóreas y mobiliario a la medida.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="eventos" data-img="/assets/proyectos/mayoly-comedor.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mayoly-comedor-t.jpg" alt="Mayoly: Espacios ambientados de principio a fin." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mayoly</span>
+            <figcaption>Espacios ambientados de principio a fin.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="audiovisual" data-img="/assets/proyectos/contenido-digital.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/contenido-digital-t.jpg" alt="Contenido digital: Campañas para redes sociales." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Contenido digital</span>
+            <figcaption>Campañas para redes sociales.</figcaption>
+          </figure>
+          <figure class="tile tile--tall is-extra" data-cat="fabricacion" data-img="/assets/proyectos/binkio.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/binkio-t.jpg" alt="Binkio · Arkangeles: Stands modulares para ferias." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Binkio · Arkangeles</span>
+            <figcaption>Stands modulares para ferias.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/expo-pabellon.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/expo-pabellon-t.jpg" alt="Expo: Pabellones con stands modulares." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Expo</span>
+            <figcaption>Pabellones con stands modulares.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="btl" data-img="/assets/proyectos/mercadolibre-puerta.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/mercadolibre-puerta-t.jpg" alt="Mercado Libre: Activaciones en espacios públicos." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Mercado Libre</span>
+            <figcaption>Activaciones en espacios públicos.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="btl" data-img="/assets/proyectos/carnation-muro.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/carnation-muro-t.jpg" alt="Carnation: Muros de marca que invitan a quedarse." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Carnation</span>
+            <figcaption>Muros de marca que invitan a quedarse.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/expo-naranja.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/expo-naranja-t.jpg" alt="Expo: Stands listos para exhibir." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Expo</span>
+            <figcaption>Stands listos para exhibir.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/taller-estructuras.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/taller-estructuras-t.jpg" alt="Nuestro taller: Estructuras en proceso de fabricación." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nuestro taller</span>
+            <figcaption>Estructuras en proceso de fabricación.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="btl" data-img="/assets/proyectos/juego-prueba.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/juego-prueba-t.jpg" alt="Juego LTC: Probamos cada juego antes de salir a evento." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Juego LTC</span>
+            <figcaption>Probamos cada juego antes de salir a evento.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/isuzu-acceso.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isuzu-acceso-t.jpg" alt="Isuzu: Accesos de stand con alto impacto." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isuzu</span>
+            <figcaption>Accesos de stand con alto impacto.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/isuzu-doble.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/isuzu-doble-t.jpg" alt="Isuzu: Stands para exhibir producto y recibir clientes." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Isuzu</span>
+            <figcaption>Stands para exhibir producto y recibir clientes.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/expo-piso.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/expo-piso-t.jpg" alt="Expo: Distribución de piso y stands para ferias." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Expo</span>
+            <figcaption>Distribución de piso y stands para ferias.</figcaption>
+          </figure>
+          <figure class="tile tile--small is-extra" data-cat="fabricacion" data-img="/assets/proyectos/taller-almacen.jpg" tabindex="0">
+            <div class="tile__media"><img src="/assets/proyectos/taller-almacen-t.jpg" alt="Nuestro taller: Almacén y producción en un mismo lugar." loading="lazy" decoding="async"></div>
+            <span class="tile__tag">Nuestro taller</span>
+            <figcaption>Almacén y producción en un mismo lugar.</figcaption>
+          </figure>
         </div>
+        <div class="pmore"><button class="btn btn--ghost-light" id="pmore">Ver más proyectos <span>(41)</span></button></div>
       </div>
     </section>
 
@@ -322,6 +644,6 @@
     <p class="lightbox__cap"></p>
   </div>
 
-  <script src="/assets/main.js?v=18" defer></script>
+  <script src="/assets/main.js?v=19" defer></script>
 </body>
 </html>
