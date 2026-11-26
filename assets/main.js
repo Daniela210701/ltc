@@ -197,19 +197,33 @@ document.querySelectorAll(".tile__media img").forEach((img) => {
   else { img.addEventListener("load", done, { once: true }); img.addEventListener("error", done, { once: true }); }
 });
 
-// 2) Cuando la página ya cargó, adelantar en segundo plano el resto (si la conexión lo permite)
+// 2) Cuando lo visible ya cargó, adelantar el resto EN FILA (de 2 en 2) para no competir con lo que se está viendo
 window.addEventListener("load", () => {
   const c = navigator.connection || {};
-  if (c.saveData || /2g/.test(c.effectiveType || "")) return;
-  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1200));
-  idle(() => {
-    // vistas previas de video
-    document.querySelectorAll('.tile video[preload="none"]').forEach((v, i) =>
-      setTimeout(() => { v.preload = "auto"; v.load(); }, 400 * i)
-    );
-    // fotos de "Ver más"
-    setTimeout(() => {
-      document.querySelectorAll('.tile.is-extra img[loading="lazy"]').forEach((img) => (img.loading = "eager"));
-    }, 2500);
-  });
+  if (c.saveData || /2g|3g/.test(c.effectiveType || "")) return;
+  const queue = [
+    ...document.querySelectorAll('.tile video[preload="none"]'),
+    ...document.querySelectorAll('.tile:not(.is-extra) img[loading="lazy"]'),
+    ...document.querySelectorAll('.tile.is-extra img[loading="lazy"]'),
+  ];
+  const next = () => {
+    const el = queue.shift();
+    if (!el) return;
+    let fired = false;
+    const go = () => { if (fired) return; fired = true; setTimeout(next, 60); };
+    if (el.tagName === "VIDEO") {
+      if (el.preload === "auto") return go();
+      el.preload = "auto";
+      el.addEventListener("loadeddata", go, { once: true });
+      el.addEventListener("error", go, { once: true });
+      setTimeout(go, 4000);
+      el.load();
+    } else {
+      if (el.complete && el.naturalWidth) return go();
+      el.addEventListener("load", go, { once: true });
+      el.addEventListener("error", go, { once: true });
+      el.loading = "eager";
+    }
+  };
+  setTimeout(() => { next(); next(); }, 1500);
 });
