@@ -83,7 +83,7 @@ document.querySelectorAll(".pfilter").forEach((btn) =>
     tiles.forEach((t) => (t.hidden = f !== "todos" && t.dataset.cat !== f));
     // En un filtro se ven todas las de esa categoría; en "Todos" se respeta el "Ver más"
     if (grid) grid.classList.toggle("is-collapsed", f === "todos" && !expanded);
-    if (moreBox) moreBox.hidden = f !== "todos" || expanded;
+    if (moreBox) moreBox.hidden = f !== "todos";
   })
 );
 
@@ -91,10 +91,18 @@ document.querySelectorAll(".pfilter").forEach((btn) =>
 const moreBtn = document.getElementById("pmore");
 const moreBox = moreBtn?.parentElement;
 let expanded = false;
+const moreLabel = moreBtn?.innerHTML;
+const setMore = () => {
+  if (!moreBtn) return;
+  moreBtn.innerHTML = expanded ? "Ver menos proyectos <span>↑</span>" : moreLabel;
+  moreBtn.setAttribute("aria-expanded", String(expanded));
+};
 moreBtn?.addEventListener("click", () => {
-  expanded = true;
-  grid?.classList.remove("is-collapsed");
-  moreBox.hidden = true;
+  expanded = !expanded;
+  grid?.classList.toggle("is-collapsed", !expanded);
+  setMore();
+  // al cerrar, regresar al inicio de Proyectos para no quedar perdido abajo
+  if (!expanded) document.getElementById("proyectos")?.scrollIntoView({ behavior: "smooth" });
 });
 
 // Videos: vistas previas ligeras. Se precargan antes de llegar y se reproducen solo en pantalla

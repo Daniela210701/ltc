@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="/assets/img/logo-ltc.webp">
-  <link rel="stylesheet" href="/assets/styles.css?v=32">
+  <link rel="stylesheet" href="/assets/styles.css?v=33">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -136,7 +136,7 @@
           <button class="pfilter" data-filter="btl">Activaciones BTL</button>
           <button class="pfilter" data-filter="audiovisual">Producción audiovisual</button>
         </div>
-        <div class="pgrid is-collapsed">
+        <div class="pgrid is-collapsed" id="pgrid">
           <figure class="tile tile--wide" data-cat="eventos" data-video="/assets/proyectos/evento.mp4?m=2" tabindex="0">
             <div class="tile__media" style="background-image:url(data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JbACo9BulHeog1jZyhXHQAAD+9DLJ0yQiJWcsJD8t2w8yTaSW5zrHKr3h9RlWChJFpN69SXxSRf39Wvnosu1e7HkzScuGpxGt5uRqNYwfYAAA)"><video src="/assets/proyectos/evento-prev.mp4?m=2" poster="/assets/proyectos/evento.webp?m=2" muted loop playsinline preload="none" aria-label="Amazon Prime Video"></video></div>
             <span class="tile__play" aria-hidden="true">▶</span>
@@ -486,7 +486,7 @@
             <figcaption>Almacén y producción en un mismo lugar.</figcaption>
           </figure>
         </div>
-        <div class="pmore"><button class="btn btn--ghost-light" id="pmore">Ver más proyectos <span>(40)</span></button></div>
+        <div class="pmore"><button class="btn btn--ghost-light" id="pmore" aria-expanded="false" aria-controls="pgrid">Ver más proyectos <span>(40)</span></button></div>
       </div>
     </section>
 
@@ -619,6 +619,6 @@
     <p class="lightbox__cap"></p>
   </div>
 
-  <script src="/assets/main.js?v=32" defer></script>
+  <script src="/assets/main.js?v=33" defer></script>
 </body>
 </html>
