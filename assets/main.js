@@ -198,6 +198,25 @@ window.addEventListener("resize", () => { clearTimeout(fitT); fitT = setTimeout(
 
 
 // ===== Carga rápida de la galería =====
+// 0) Internet lento (< 3 Mbps, 3G o ahorro de datos): usar fotos mini (~5 KB) en la cuadrícula
+(() => {
+  const c = navigator.connection || {};
+  const slow = c.saveData || /2g|3g/.test(c.effectiveType || "") || (c.downlink && c.downlink < 3);
+  if (!slow) return;
+  document.documentElement.classList.add("conexion-lenta");
+  document.querySelectorAll('.tile__media picture').forEach((pic) => {
+    const img = pic.querySelector("img");
+    if (img && img.complete && img.naturalWidth) return; // ya cargó
+    pic.querySelectorAll("source").forEach((s) => {
+      s.srcset = s.srcset.replace(/-(t|m)\.(avif|webp)\?m=\d/g, "-s.$2?m=4").replace(/ \d+w/g, "");
+      s.removeAttribute("sizes");
+    });
+    if (img) {
+      img.removeAttribute("srcset"); img.removeAttribute("sizes");
+      img.src = img.src.replace(/-(t|m)\.webp\?m=\d/, "-s.webp?m=4");
+    }
+  });
+})();
 // 1) Fundido suave cuando llega cada foto (sobre la vista borrosa)
 document.querySelectorAll(".tile__media img").forEach((img) => {
   const done = () => img.classList.add("is-loaded");
