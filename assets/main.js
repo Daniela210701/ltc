@@ -187,3 +187,29 @@ const fitTitles = () => {
 window.addEventListener("load", fitTitles);
 let fitT;
 window.addEventListener("resize", () => { clearTimeout(fitT); fitT = setTimeout(fitTitles, 120); });
+
+
+// ===== Carga rápida de la galería =====
+// 1) Fundido suave cuando llega cada foto (sobre la vista borrosa)
+document.querySelectorAll(".tile__media img").forEach((img) => {
+  const done = () => img.classList.add("is-loaded");
+  if (img.complete && img.naturalWidth) done();
+  else { img.addEventListener("load", done, { once: true }); img.addEventListener("error", done, { once: true }); }
+});
+
+// 2) Cuando la página ya cargó, adelantar en segundo plano el resto (si la conexión lo permite)
+window.addEventListener("load", () => {
+  const c = navigator.connection || {};
+  if (c.saveData || /2g/.test(c.effectiveType || "")) return;
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1200));
+  idle(() => {
+    // vistas previas de video
+    document.querySelectorAll('.tile video[preload="none"]').forEach((v, i) =>
+      setTimeout(() => { v.preload = "auto"; v.load(); }, 400 * i)
+    );
+    // fotos de "Ver más"
+    setTimeout(() => {
+      document.querySelectorAll('.tile.is-extra img[loading="lazy"]').forEach((img) => (img.loading = "eager"));
+    }, 2500);
+  });
+});
