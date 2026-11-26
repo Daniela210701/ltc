@@ -32,10 +32,10 @@ if ("IntersectionObserver" in window) {
           io.unobserve(e.target);
         }
       }),
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    { threshold: 0.01, rootMargin: "0px 0px 120px 0px" }
   );
   items.forEach((el, i) => {
-    el.style.transitionDelay = `${(i % 4) * 70}ms`;
+    el.style.transitionDelay = `${(i % 4) * 35}ms`;
     io.observe(el);
   });
 } else {
@@ -148,7 +148,9 @@ if (lb) {
     lbCap.textContent = tag ? `${tag} — ${cap}` : cap;
     lb.hidden = false;
     document.body.style.overflow = "hidden";
+    const l = visible(); warm(l[current + 1]); warm(l[current - 1]);
   };
+  const warm = (t) => { if (t && t.dataset.img) { const i = new Image(); i.src = t.dataset.img; } };
   const step = (d) => { const list = visible(); if (!list.length) return; show(list[(current + d + list.length) % list.length]); };
   const close = () => {
     lb.hidden = true; document.body.style.overflow = "";
