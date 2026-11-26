@@ -200,7 +200,8 @@ document.querySelectorAll(".tile__media img").forEach((img) => {
 // 2) Cuando lo visible ya cargó, adelantar el resto EN FILA (de 2 en 2) para no competir con lo que se está viendo
 window.addEventListener("load", () => {
   const c = navigator.connection || {};
-  if (c.saveData || /2g|3g/.test(c.effectiveType || "")) return;
+  // Solo con conexión buena (≥ 3 Mbps); con conexión lenta se carga únicamente lo que se ve
+  if (c.saveData || /2g|3g/.test(c.effectiveType || "") || (c.downlink && c.downlink < 3)) return;
   const queue = [
     ...document.querySelectorAll('.tile video[preload="none"]'),
     ...document.querySelectorAll('.tile:not(.is-extra) img[loading="lazy"]'),
